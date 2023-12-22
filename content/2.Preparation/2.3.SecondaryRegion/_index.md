@@ -35,7 +35,7 @@ pre : " <b> 2.3 </b> "
 
 3. At **Specify stack details** interface:
     + Set **IsPrimary** as **No**
-    + Keep *LatestAmiId* as default
+    + Keep **LatestAmiId** as default
     + Keep **NetworkStackName** as default (network-stack)
 
 4. Then, click on **Next**.

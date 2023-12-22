@@ -12,21 +12,21 @@
     <title>Aurora :: Pilot Light</title>
 
     
-    <link href="/css/nucleus.css?1703218270" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1703218270" rel="stylesheet">
-    <link href="/css/hybrid.css?1703218270" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1703218270" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1703218270" rel="stylesheet">
-    <link href="/css/auto-complete.css?1703218270" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1703218270" rel="stylesheet">
-    <link href="/css/theme.css?1703218270" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1703218270" rel="stylesheet">
+    <link href="/css/nucleus.css?1703255608" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1703255608" rel="stylesheet">
+    <link href="/css/hybrid.css?1703255608" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1703255608" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1703255608" rel="stylesheet">
+    <link href="/css/auto-complete.css?1703255608" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1703255608" rel="stylesheet">
+    <link href="/css/theme.css?1703255608" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1703255608" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1703218270" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1703255608" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1703218270"></script>
+    <script src="/js/jquery-3.3.1.min.js?1703255608"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1703218270"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1703218270"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1703255608"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1703255608"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1703218270"></script>
+<script type="text/javascript" src="/js/search.js?1703255608"></script>
 
     
   </div>
@@ -167,13 +167,13 @@
  
   
     
-    <li data-nav-id="/vi/2.preparation/2.2.primaryregion/" title="Region chính" class="dd-item 
+    <li data-nav-id="/vi/2.preparation/2.2.primaryregion/" title="Vùng chính" class="dd-item 
         
         
         
         ">
       <a href="/vi/2.preparation/2.2.primaryregion/">
-           <b> 2.2 </b> Region chính
+           <b> 2.2 </b> Vùng chính
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/vi/2.preparation/2.3.secondaryregion/" title="Region phụ" class="dd-item 
+    <li data-nav-id="/vi/2.preparation/2.3.secondaryregion/" title="Vùng thứ cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/2.preparation/2.3.secondaryregion/">
-           <b> 2.3 </b> Region phụ
+           <b> 2.3 </b> Vùng thứ cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -258,13 +258,13 @@
  
   
     
-    <li data-nav-id="/vi/3.preparesecondaryregion/" title="Chuẩn bị region phụ" class="dd-item 
+    <li data-nav-id="/vi/3.preparesecondaryregion/" title="Chuẩn bị vùng thứ cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/3.preparesecondaryregion/">
-           <b> 3. </b> Chuẩn bị region phụ
+           <b> 3. </b> Chuẩn bị vùng thứ cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -371,13 +371,13 @@
  
   
     
-    <li data-nav-id="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra dự phòng" class="dd-item 
+    <li data-nav-id="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra chế độ dự phòng" class="dd-item 
         
         
         
         ">
       <a href="/vi/4.failover/4.3.verifyfailover/">
-           <b> 4.3 </b> Kiểm tra dự phòng
+           <b> 4.3 </b> Kiểm tra chế độ dự phòng
           
             <i class="fas fa-check read-icon"></i>
           
@@ -602,7 +602,52 @@
 
 
 
-	<h1 id="aurora">Aurora</h1>
+	<p><a href="https://aws.amazon.com/vi/rds/aurora/global-database/">Amazon Aurora Global Database</a> được thiết kế cho các ứng dụng phân phối toàn cầu, cho phép một CSDL Amazon Aurora đơn lẻ trải khắp các khu vực AWS. Nó nhân bản dữ liệu của bạn mà không ảnh hưởng đến hiệu năng của CSDL, cho phép đọc cục bộ nhanh chóng với độ trễ thấp trong từng khu vực, và cung cấp khả năng khắc phục thảm họa sau khi ngừng hoạt động trên toàn khu vực. Trong các tình huống khắc phục thảm họa, bạn có thể nâng cấp một khu vực thứ cấp để có thể đảm nhiệm toàn bộ trách nhiệm đọc-ghi trong vòng chưa đầy một phút.</p>
+<p>Với một CSDL toàn cầu Aurora, có 2 hướng khác nhau để phục hồi tùy theo tình huống.</p>
+<p><strong>Failover</strong> – Sử dụng phương thức này để phục hồi sau sự cố ngừng hoạt động. Với phương pháp này, bạn thực hiện chuyển đổi dự phòng giữa các khu vực sang một trong các cụm CSDL thứ cấp trong CSDL toàn cầu Aurora. PRO cho phương pháp này thường là giả trị khác 0 được đo bằng giây. Lượng dữ liệu mất đi tùy thuộc vào độ trễ của việc nhân bản CSDL toàn cầu Aurora tài thời điểm chuyển đổi dự phòng.</p>
+<p><strong>Switchover</strong> – Thao tác này trước đó được gọi là &ldquo;Chuyển đổi dự phòng được lên kế hoạch quản lí&rdquo;. Sử dụng phương pháp này cho các kịch bản được kiểm soát, chẳng hạn như bảo trì vận hành và các quy trình vận hành theo kế hoạch khác. Bời vì chức năng này đồng bộ cụm CSDL thứ cấp với CSDL chính trước khi có sự thay đổi nào, RPO là 0 (không có dữ liệu bị mất).</p>
+<p><strong>Switchover</strong>, được thể hiện trong bài thực hành <strong>Warm Standby</strong>.</p>
+<p>Với bài thực hành này chúng ta sẽ thực hiện một <strong>Failover</strong>.</p>
+<ol>
+<li>
+<p>Đi đến <a href="https://us-west-1.console.aws.amazon.com/rds/home?region=us-west-1#databases:">RDS</a> trong vùng <strong>N. California (us-west-1)</strong>.</p>
+</li>
+<li>
+<p>Xem xét CSDL toàn cầu <strong>pilot-global</strong>. Chú ý bạn có <strong>pilot-primary</strong> là cụm chính trong <strong>us-east-1</strong> với <strong>Writer instance</strong> and <strong>pilot-secondary</strong> và cụm thứ cấp trong vùng <strong>us-west-1</strong> với <strong>Reader instance</strong>.
+<img src="./images/4.failover/4.1.aurora/4.1.1aurora.png?width=90pc" alt="Failover Aurora"></p>
+</li>
+<li>
+<p>Chọn cụm <strong>pilot-global</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Chọn <strong>Switch over or fail over global database</strong> dưới <strong>Actions</strong>.
+<img src="./images/4.failover/4.1.aurora/4.1.2aurora.png?width=90pc" alt="Failover Aurora"></p>
+</li>
+<li>
+<p>Chọn <strong>Failover (allow data loss)</strong>.</p>
+</li>
+<li>
+<p>Tại mục <strong>New primary cluster</strong>, chọn <strong>pilot-secondary</strong>.</p>
+</li>
+<li>
+<p>Nhập <code>confirm</code>.</p>
+</li>
+<li>
+<p>Sau đó, nhấn <strong>Confirm</strong>.
+<img src="./images/4.failover/4.1.aurora/4.1.3aurora.png?width=90pc" alt="Failover Aurora"></p>
+</li>
+<li>
+<p>Sẽ mất khoảng vài phút để nâng cấp CSDL thứ cấp thành CSDL chính.
+<img src="./images/4.failover/4.1.aurora/4.1.4aurora.png?width=90pc" alt="Failover Aurora"></p>
+</li>
+<li>
+<p>Sau khi quá trình chuyển đổi dự phòng hoàn tất, chú ý sự thay đổi. Cụm <strong>Primary cluster</strong> hiện giờ trong vùng <strong>us-west-1</strong> với <strong>Writer instance</strong> và cụm <strong>Secondary Cluster</strong> hiện giờ trong vùng <strong>us-east-1</strong> với <strong>Reader instance</strong>. 
+<img src="./images/4.failover/4.1.aurora/4.1.5aurora.png?width=90pc" alt="Failover Aurora"></p>
+</li>
+</ol>
 
 
 
@@ -864,19 +909,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1703218270"></script>
-    <script src="/js/perfect-scrollbar.min.js?1703218270"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1703218270"></script>
-    <script src="/js/jquery.sticky.js?1703218270"></script>
-    <script src="/js/featherlight.min.js?1703218270"></script>
-    <script src="/js/highlight.pack.js?1703218270"></script>
+    <script src="/js/clipboard.min.js?1703255608"></script>
+    <script src="/js/perfect-scrollbar.min.js?1703255608"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1703255608"></script>
+    <script src="/js/jquery.sticky.js?1703255608"></script>
+    <script src="/js/featherlight.min.js?1703255608"></script>
+    <script src="/js/highlight.pack.js?1703255608"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1703218270"></script>
-    <script src="/js/learn.js?1703218270"></script>
-    <script src="/js/hugo-learn.js?1703218270"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1703255608"></script>
+    <script src="/js/learn.js?1703255608"></script>
+    <script src="/js/hugo-learn.js?1703255608"></script>
 
-    <link href="/mermaid/mermaid.css?1703218270" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1703218270"></script>
+    <link href="/mermaid/mermaid.css?1703255608" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1703255608"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

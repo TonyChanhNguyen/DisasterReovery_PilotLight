@@ -12,21 +12,21 @@
     <title>Kiểm tra website :: Pilot Light</title>
 
     
-    <link href="/css/nucleus.css?1703218270" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1703218270" rel="stylesheet">
-    <link href="/css/hybrid.css?1703218270" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1703218270" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1703218270" rel="stylesheet">
-    <link href="/css/auto-complete.css?1703218270" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1703218270" rel="stylesheet">
-    <link href="/css/theme.css?1703218270" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1703218270" rel="stylesheet">
+    <link href="/css/nucleus.css?1703255608" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1703255608" rel="stylesheet">
+    <link href="/css/hybrid.css?1703255608" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1703255608" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1703255608" rel="stylesheet">
+    <link href="/css/auto-complete.css?1703255608" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1703255608" rel="stylesheet">
+    <link href="/css/theme.css?1703255608" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1703255608" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1703218270" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1703255608" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1703218270"></script>
+    <script src="/js/jquery-3.3.1.min.js?1703255608"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1703218270"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1703218270"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1703255608"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1703255608"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1703218270"></script>
+<script type="text/javascript" src="/js/search.js?1703255608"></script>
 
     
   </div>
@@ -167,13 +167,13 @@
  
   
     
-    <li data-nav-id="/vi/2.preparation/2.2.primaryregion/" title="Region chính" class="dd-item 
+    <li data-nav-id="/vi/2.preparation/2.2.primaryregion/" title="Vùng chính" class="dd-item 
         
         
         
         ">
       <a href="/vi/2.preparation/2.2.primaryregion/">
-           <b> 2.2 </b> Region chính
+           <b> 2.2 </b> Vùng chính
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/vi/2.preparation/2.3.secondaryregion/" title="Region phụ" class="dd-item 
+    <li data-nav-id="/vi/2.preparation/2.3.secondaryregion/" title="Vùng thứ cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/2.preparation/2.3.secondaryregion/">
-           <b> 2.3 </b> Region phụ
+           <b> 2.3 </b> Vùng thứ cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -258,13 +258,13 @@
  
   
     
-    <li data-nav-id="/vi/3.preparesecondaryregion/" title="Chuẩn bị region phụ" class="dd-item 
+    <li data-nav-id="/vi/3.preparesecondaryregion/" title="Chuẩn bị vùng thứ cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/3.preparesecondaryregion/">
-           <b> 3. </b> Chuẩn bị region phụ
+           <b> 3. </b> Chuẩn bị vùng thứ cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -371,13 +371,13 @@
  
   
     
-    <li data-nav-id="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra dự phòng" class="dd-item 
+    <li data-nav-id="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra chế độ dự phòng" class="dd-item 
         
         
         
         ">
       <a href="/vi/4.failover/4.3.verifyfailover/">
-           <b> 4.3 </b> Kiểm tra dự phòng
+           <b> 4.3 </b> Kiểm tra chế độ dự phòng
           
             <i class="fas fa-check read-icon"></i>
           
@@ -578,7 +578,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#vùng-chính">Vùng chính</a></li>
+        <li><a href="#vùng-thứ-cấp">Vùng thứ cấp</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -602,7 +611,93 @@
 
 
 
-	<h1 id="kiểm-tra-website">Kiểm tra website</h1>
+	<h3 id="vùng-chính">Vùng chính</h3>
+<ol>
+<li>
+<p>Nhấn <a href="https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/events?stackId=arn%3Aaws%3Acloudformation%3Aus-west-1%3A170074558790%3Astack%2Fnetwork-stack%2F97f9d5d0-9f10-11ee-a02a-06401036bc1b&amp;filteringText=&amp;filteringStatus=active&amp;viewNested=true">CloudFormation Stacks</a> để chuyển hướng đến giao diện của vùng <strong>N. Virginia (us-east-1)</strong>.</p>
+</li>
+<li>
+<p>Chọn stack <strong>pilot-primary</strong>.</p>
+</li>
+<li>
+<p>Nhấn vào thanh chuyển hướng <strong>Output</strong>.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.1verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Nhấn vào đường dẫn đầu ra <strong>WebsiteURL</strong> và mở trong một giao diện web mới.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.2verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Tại trang web, nhấn <strong>Sign up</strong> để tạo tài khoản.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.3verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Điền thông tin cần thiết để tạo tài khoản.</p>
+</li>
+<li>
+<p>Sau đó, nhấn <strong>Signup</strong> để hoàn tất bước này.</p>
+</li>
+</ol>
+<p>
+<div class="notices warning" ><p>Hãy lưu trữ các thông tin mà bạn đã cung cấp trong bước này</p>
+</div>
+
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.4verifywebsite.png?width=90pc" alt="Verify website"></p>
+<ol start="8">
+<li>
+<p>Nhấn <strong>Log in</strong>.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.5verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Điền thông tin bạn đã cung cấp.</p>
+</li>
+<li>
+<p>Sau đó, nhấn <strong>Login</strong>.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.6verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Sau khi đăng nhập thành công, nhấn <strong>Unicorn</strong> mà bạn muốn. Sau đó nhấn <strong>Add to cart</strong> để thêm vào giỏ hàng của bạn.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.7verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Sau khi bạn thêm <strong>Unicorn</strong> vào giỏ hàng thành công, kiểm tra biểu tượng <strong>Cart</strong> để thấy số lượng đã được tăng lên.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.8verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Lặp lại bước 12 để thêm nhiều sản phẩm hơn vào giỏ hàng.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.9verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Sau khi hoàn tất các bước. Lưu lại số lượng sản phẩm trong giỏ hàng và khu vực của nó. Chúng ta sẽ kiểm tra lại chúng sau khi thực hiện nhân bản website đến khu vực thứ cấp.</p>
+</li>
+</ol>
+<p>
+<div class="notices note" ><p>Trong trường hợp này, số lượng trong giỏ hàng là <strong>5</strong> và khu vực là <strong>us-east-1</strong> (khu vực chính).</p>
+</div>
+
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.10verifywebsite.png?width=90pc" alt="Verify website"></p>
+<h3 id="vùng-thứ-cấp">Vùng thứ cấp</h3>
+<p>Vùng thứ cấp của bạn phải là không khả dụng. Trong chiến lược khắc phục thảm họa Pilot Light, sẽ không có máy chủ .</p>
+<ol>
+<li>
+<p>Đi đến <a href="">CloudFormation Stacks</a> trong vùng <strong>N. California (us-west-1)</strong>.</p>
+</li>
+<li>
+<p>Chọn stank <strong>pilot-secondary</strong>.</p>
+</li>
+<li>
+<p>Nhấn vào thanh chuyển hướng <strong>Outputs</strong>.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.11verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Nhấn đường dẫn đầu ra WebsiteURL và mở trong trình duyệt web mới.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.12verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+<li>
+<p>Bạn sẽ thấy lỗi trang 404.
+<img src="./images/2.preparation/2.4.verifywebsite/2.4.13verifywebsite.png?width=90pc" alt="Verify website"></p>
+</li>
+</ol>
 
 
 
@@ -854,10 +949,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2.preparation/2.3.secondaryregion/" title="Region phụ"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/2.preparation/2.3.secondaryregion/" title="Vùng thứ cấp"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/3.preparesecondaryregion/" title="Chuẩn bị region phụ" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/3.preparesecondaryregion/" title="Chuẩn bị vùng thứ cấp" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -867,19 +962,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1703218270"></script>
-    <script src="/js/perfect-scrollbar.min.js?1703218270"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1703218270"></script>
-    <script src="/js/jquery.sticky.js?1703218270"></script>
-    <script src="/js/featherlight.min.js?1703218270"></script>
-    <script src="/js/highlight.pack.js?1703218270"></script>
+    <script src="/js/clipboard.min.js?1703255608"></script>
+    <script src="/js/perfect-scrollbar.min.js?1703255608"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1703255608"></script>
+    <script src="/js/jquery.sticky.js?1703255608"></script>
+    <script src="/js/featherlight.min.js?1703255608"></script>
+    <script src="/js/highlight.pack.js?1703255608"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1703218270"></script>
-    <script src="/js/learn.js?1703218270"></script>
-    <script src="/js/hugo-learn.js?1703218270"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1703255608"></script>
+    <script src="/js/learn.js?1703255608"></script>
+    <script src="/js/hugo-learn.js?1703255608"></script>
 
-    <link href="/mermaid/mermaid.css?1703218270" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1703218270"></script>
+    <link href="/mermaid/mermaid.css?1703255608" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1703255608"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

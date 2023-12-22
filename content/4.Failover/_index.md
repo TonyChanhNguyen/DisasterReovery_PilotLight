@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 4. </b> "
 ---
 
-In the event a disaster affects your primary region N. Virginia (us-east-1), you want to bring up the resources in the secondary region Oregon (us-west-2).
+In the event a disaster affects your primary region N. Virginia (us-east-1), you want to bring up the resources in the secondary region N. California (us-west-1).
 
 ### Simulating a Regional Service Event
 

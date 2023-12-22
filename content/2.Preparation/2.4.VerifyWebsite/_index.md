@@ -7,7 +7,7 @@ pre : " <b> 2.4 </b> "
 ---
 
 ### Primary Region
-1. Click [CloudFormation Stacks](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/events?stackId=arn%3Aaws%3Acloudformation%3Aus-west-1%3A170074558790%3Astack%2Fnetwork-stack%2F97f9d5d0-9f10-11ee-a02a-06401036bc1b&filteringText=&filteringStatus=active&viewNested=true)  to navigate to the dashboard in **N. Virginia (us-east-1)** region.
+1. Click [CloudFormation Stacks](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/events?stackId=arn%3Aaws%3Acloudformation%3Aus-west-1%3A170074558790%3Astack%2Fnetwork-stack%2F97f9d5d0-9f10-11ee-a02a-06401036bc1b&filteringText=&filteringStatus=active&viewNested=true) to navigate to the dashboard in **N. Virginia (us-east-1)** region.
 2. Choose the **pilot-primary** stack.
 3. Click the **Output** link.
 ![Verify website](./images/2.preparation/2.4.verifywebsite/2.4.1verifywebsite.png?width=90pc)

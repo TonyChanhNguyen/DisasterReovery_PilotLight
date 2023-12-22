@@ -37,7 +37,7 @@ pre : " <b> 2.2 </b> "
 
 3. At **Specify stack details** interface:
     + Keep **IsPrimary** as default (Yes)
-    + Keep *LatestAmiId* as default
+    + Keep **LatestAmiId** as default
     + Keep **NetworkStackName** as default (network-stack)
 
 4. Then, click on **Next**.

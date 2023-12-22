@@ -12,21 +12,21 @@
     <title>EC2 :: Pilot Light</title>
 
     
-    <link href="/css/nucleus.css?1703218270" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1703218270" rel="stylesheet">
-    <link href="/css/hybrid.css?1703218270" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1703218270" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1703218270" rel="stylesheet">
-    <link href="/css/auto-complete.css?1703218270" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1703218270" rel="stylesheet">
-    <link href="/css/theme.css?1703218270" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1703218270" rel="stylesheet">
+    <link href="/css/nucleus.css?1703255608" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1703255608" rel="stylesheet">
+    <link href="/css/hybrid.css?1703255608" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1703255608" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1703255608" rel="stylesheet">
+    <link href="/css/auto-complete.css?1703255608" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1703255608" rel="stylesheet">
+    <link href="/css/theme.css?1703255608" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1703255608" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1703218270" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1703255608" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1703218270"></script>
+    <script src="/js/jquery-3.3.1.min.js?1703255608"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1703218270"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1703218270"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1703255608"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1703255608"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1703218270"></script>
+<script type="text/javascript" src="/js/search.js?1703255608"></script>
 
     
   </div>
@@ -167,13 +167,13 @@
  
   
     
-    <li data-nav-id="/vi/2.preparation/2.2.primaryregion/" title="Region chính" class="dd-item 
+    <li data-nav-id="/vi/2.preparation/2.2.primaryregion/" title="Vùng chính" class="dd-item 
         
         
         
         ">
       <a href="/vi/2.preparation/2.2.primaryregion/">
-           <b> 2.2 </b> Region chính
+           <b> 2.2 </b> Vùng chính
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/vi/2.preparation/2.3.secondaryregion/" title="Region phụ" class="dd-item 
+    <li data-nav-id="/vi/2.preparation/2.3.secondaryregion/" title="Vùng thứ cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/2.preparation/2.3.secondaryregion/">
-           <b> 2.3 </b> Region phụ
+           <b> 2.3 </b> Vùng thứ cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -258,13 +258,13 @@
  
   
     
-    <li data-nav-id="/vi/3.preparesecondaryregion/" title="Chuẩn bị region phụ" class="dd-item 
+    <li data-nav-id="/vi/3.preparesecondaryregion/" title="Chuẩn bị vùng thứ cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/3.preparesecondaryregion/">
-           <b> 3. </b> Chuẩn bị region phụ
+           <b> 3. </b> Chuẩn bị vùng thứ cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -371,13 +371,13 @@
  
   
     
-    <li data-nav-id="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra dự phòng" class="dd-item 
+    <li data-nav-id="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra chế độ dự phòng" class="dd-item 
         
         
         
         ">
       <a href="/vi/4.failover/4.3.verifyfailover/">
-           <b> 4.3 </b> Kiểm tra dự phòng
+           <b> 4.3 </b> Kiểm tra chế độ dự phòng
           
             <i class="fas fa-check read-icon"></i>
           
@@ -602,7 +602,63 @@
 
 
 
-	<h1 id="ec2">EC2</h1>
+	<ol>
+<li>
+<p>Đi đến <a href="https://us-west-1.console.aws.amazon.com/ec2/home?region=us-west-1#Images:visibility=owned-by-me">AMIs</a> trong vùng <strong>N. California (us-west-1)</strong>.</p>
+</li>
+<li>
+<p>Chọn AMI tên <strong>pilotAMI</strong>.</p>
+</li>
+<li>
+<p>Sau đó, nhấn <strong>Launch instance from AMI</strong>.
+<img src="/images/4.failover/4.2.ec2/4.2.1ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Nhập <code>pilot-secondary</code> tại <strong>Name</strong>.
+<img src="./images/4.failover/4.2.ec2/4.2.2ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Cuộn xuống tại mục <strong>Key pair (login)</strong>, chọn <strong>Proceed without a key pair (Not recommended)</strong> tại <strong>Key pair name - required</strong>.
+<img src="./images/4.failover/4.2.ec2/4.2.3ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Tại trang <strong>Network settings</strong>, nhấn <strong>Edit</strong>.
+<img src="./images/4.failover/4.2.ec2/4.2.4ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Chọn <strong>VPC</strong> mà không phải là VPC mặc định tại mục <strong>VPC</strong>.</p>
+</li>
+<li>
+<p>Tại <strong>Firewall (security groups)</strong>, chọn <strong>Select existing security group</strong>.</p>
+</li>
+<li>
+<p>Sau đó chọn SG tên <strong>network-stack-WebServerSecurityGroup-XXXXXXXXXXXXX</strong>.
+<img src="./images/4.failover/4.2.ec2/4.2.5ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Cuộn xuống và mở rộng <strong>Advanced details</strong>.</p>
+</li>
+<li>
+<p>Tại <strong>IAM instance profile</strong>, chọn <strong>pilot-secondary-S3InstanceProfile-xxx</strong>.
+<img src="./images/4.failover/4.2.ec2/4.2.7ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Tại trang <strong>User data - optional</strong>, nhập đoạn code sau:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>#!/bin/bash     
+sudo su ec2-user                        
+export AWS_DEFAULT_REGION=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | python -c &#34;import json,sys; print json.loads(sys.stdin.read())[&#39;region&#39;]&#34;)
+export DATABASE=$(aws rds describe-db-clusters --region $AWS_DEFAULT_REGION --db-cluster-identifier pilot-secondary --query &#39;DBClusters[*].[Endpoint]&#39; --output text)
+sudo bash -c &#34;cat &gt;/home/ec2-user/unishopcfg.sh&#34; &lt;&lt;EOF
+#!/bin/bash
+export DB_ENDPOINT=$DATABASE
+EOF
+sudo systemctl restart unishop
+</code></pre><ol start="13">
+<li>Nhấn <strong>Launch instance</strong>.</li>
+</ol>
+<p><img src="./images/4.failover/4.2.ec2/4.2.6ec2.png?width=90pc" alt="Failover EC2"></p>
 
 
 
@@ -857,7 +913,7 @@
 			<a class="nav nav-prev" href="/vi/4.failover/4.1.aurora/" title="Aurora"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra dự phòng" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra chế độ dự phòng" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -867,19 +923,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1703218270"></script>
-    <script src="/js/perfect-scrollbar.min.js?1703218270"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1703218270"></script>
-    <script src="/js/jquery.sticky.js?1703218270"></script>
-    <script src="/js/featherlight.min.js?1703218270"></script>
-    <script src="/js/highlight.pack.js?1703218270"></script>
+    <script src="/js/clipboard.min.js?1703255608"></script>
+    <script src="/js/perfect-scrollbar.min.js?1703255608"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1703255608"></script>
+    <script src="/js/jquery.sticky.js?1703255608"></script>
+    <script src="/js/featherlight.min.js?1703255608"></script>
+    <script src="/js/highlight.pack.js?1703255608"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1703218270"></script>
-    <script src="/js/learn.js?1703218270"></script>
-    <script src="/js/hugo-learn.js?1703218270"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1703255608"></script>
+    <script src="/js/learn.js?1703255608"></script>
+    <script src="/js/hugo-learn.js?1703255608"></script>
 
-    <link href="/mermaid/mermaid.css?1703218270" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1703218270"></script>
+    <link href="/mermaid/mermaid.css?1703255608" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1703255608"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -12,21 +12,21 @@
     <title>Dọn dẹp tài nguyên :: Pilot Light</title>
 
     
-    <link href="/css/nucleus.css?1703218270" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1703218270" rel="stylesheet">
-    <link href="/css/hybrid.css?1703218270" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1703218270" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1703218270" rel="stylesheet">
-    <link href="/css/auto-complete.css?1703218270" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1703218270" rel="stylesheet">
-    <link href="/css/theme.css?1703218270" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1703218270" rel="stylesheet">
+    <link href="/css/nucleus.css?1703255608" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1703255608" rel="stylesheet">
+    <link href="/css/hybrid.css?1703255608" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1703255608" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1703255608" rel="stylesheet">
+    <link href="/css/auto-complete.css?1703255608" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1703255608" rel="stylesheet">
+    <link href="/css/theme.css?1703255608" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1703255608" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1703218270" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1703255608" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1703218270"></script>
+    <script src="/js/jquery-3.3.1.min.js?1703255608"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1703218270"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1703218270"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1703255608"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1703255608"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1703218270"></script>
+<script type="text/javascript" src="/js/search.js?1703255608"></script>
 
     
   </div>
@@ -167,13 +167,13 @@
  
   
     
-    <li data-nav-id="/vi/2.preparation/2.2.primaryregion/" title="Region chính" class="dd-item 
+    <li data-nav-id="/vi/2.preparation/2.2.primaryregion/" title="Vùng chính" class="dd-item 
         
         
         
         ">
       <a href="/vi/2.preparation/2.2.primaryregion/">
-           <b> 2.2 </b> Region chính
+           <b> 2.2 </b> Vùng chính
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,13 +195,13 @@
  
   
     
-    <li data-nav-id="/vi/2.preparation/2.3.secondaryregion/" title="Region phụ" class="dd-item 
+    <li data-nav-id="/vi/2.preparation/2.3.secondaryregion/" title="Vùng thứ cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/2.preparation/2.3.secondaryregion/">
-           <b> 2.3 </b> Region phụ
+           <b> 2.3 </b> Vùng thứ cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -258,13 +258,13 @@
  
   
     
-    <li data-nav-id="/vi/3.preparesecondaryregion/" title="Chuẩn bị region phụ" class="dd-item 
+    <li data-nav-id="/vi/3.preparesecondaryregion/" title="Chuẩn bị vùng thứ cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/3.preparesecondaryregion/">
-           <b> 3. </b> Chuẩn bị region phụ
+           <b> 3. </b> Chuẩn bị vùng thứ cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -371,13 +371,13 @@
  
   
     
-    <li data-nav-id="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra dự phòng" class="dd-item 
+    <li data-nav-id="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra chế độ dự phòng" class="dd-item 
         
         
         
         ">
       <a href="/vi/4.failover/4.3.verifyfailover/">
-           <b> 4.3 </b> Kiểm tra dự phòng
+           <b> 4.3 </b> Kiểm tra chế độ dự phòng
           
             <i class="fas fa-check read-icon"></i>
           
@@ -572,7 +572,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#dọn-dẹp-s3">Dọn dẹp S3</a></li>
+        <li><a href="#dọn-dẹp-csdl">Dọn dẹp CSDL</a></li>
+        <li><a href="#dọn-dẹp-ec2">Dọn dẹp EC2</a></li>
+        <li><a href="#dọn-dẹp-cloudformation-tại-vùng-thứ-cấp">Dọn dẹp CloudFormation tại vùng thứ cấp</a></li>
+        <li><a href="#dọn-dẹp-cloudformation-tại-vùng-chính">Dọn dẹp CloudFormation tại vùng chính</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -596,7 +608,177 @@
 
 
 
-	<h1 id="dọn-dẹp-tài-nguyên">Dọn dẹp tài nguyên</h1>
+	<h3 id="dọn-dẹp-s3">Dọn dẹp S3</h3>
+<ol>
+<li>
+<p>Đi đến <a href="https://s3.console.aws.amazon.com/s3/home">S3</a>.</p>
+</li>
+<li>
+<p>Chọn <strong>pilot-primary-uibucket-xxxx</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Empty</strong>.
+<img src="./images/5.cleanup/5.1cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Nhập <code>permanently delete</code>.</p>
+</li>
+<li>
+<p>Sau đó, nhấn <strong>Empty</strong>.
+<img src="./images/5.cleanup/5.2cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Lặp lại các bước trên với bucket tên <strong>pilot-secondary-uibucket-xxxx</strong>.</p>
+</li>
+</ol>
+<h3 id="dọn-dẹp-csdl">Dọn dẹp CSDL</h3>
+<h4 id="vùng-chính">Vùng chính</h4>
+<ol>
+<li>
+<p>Đi đến <a href="https://us-west-1.console.aws.amazon.com/rds/home?region=us-east-1#databases:">RDS</a> ở vùng <strong>N. Virginia (us-east-1)</strong>.</p>
+</li>
+<li>
+<p>Chọn CSDL <strong>unishop</strong> dưới cụm <strong>pilot-primary</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Action</strong>.</p>
+</li>
+<li>
+<p>Sau đó nhấn <strong>Delete</strong>.
+<img src="./images/5.cleanup/5.5cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Nhập <code>delete me</code>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Delete</strong>.
+<img src="./images/5.cleanup/5.6cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Sau khi CSDL <strong>unishop</strong> đã xóa, chọn cụm <strong>pilot-primary</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Remove from global database</strong>.
+<img src="./images/5.cleanup/5.9cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Nhấn <strong>Remove and promote</strong>.
+<img src="./images/5.cleanup/5.10cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Sau khi đã xóa khỏi cụm toàn cầu, chọn cụm <strong>pilot-primary</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Delete</strong>.
+<img src="./images/5.cleanup/5.11cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Bỏ chọn tại ô <strong>Create final snapshot</strong>.</p>
+</li>
+<li>
+<p>Chọn ô <strong>I acknowledge that upon instance&hellip;</strong>.</p>
+</li>
+<li>
+<p>Nhập <code>delete me</code>.</p>
+</li>
+<li>
+<p>Sau đó, nhấn <strong>Delete DB sluster</strong>.
+<img src="./images/5.cleanup/5.8cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+</ol>
+<h4 id="vùng-thứ-cấp">Vùng thứ cấp</h4>
+<ol>
+<li>Đi đến <a href="https://us-west-1.console.aws.amazon.com/rds/home?region=us-west-1#databases:">RDS</a> trong vùng <strong>N. California (us-west-1)</strong>.</li>
+<li>Lặp lại các bước trên để xóa CSDL <strong>unishop-pilot</strong> trước, sau đó xóa cụm <strong>pilot-secondary</strong>.</li>
+</ol>
+<p>Sau khi CSDL và cụm được xóa, bây giờ xóa <strong>Global database</strong>.</p>
+<ol start="3">
+<li>
+<p>Chọn <strong>pilot-global</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Delete</strong>.
+<img src="./images/5.cleanup/5.12cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Nhập <code>delete me</code>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Delete</strong>.
+<img src="./images/5.cleanup/5.13cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+</ol>
+<h3 id="dọn-dẹp-ec2">Dọn dẹp EC2</h3>
+<ol>
+<li>
+<p>Đi đến <a href="https://us-west-1.console.aws.amazon.com/ec2/home?region=us-west-1#Instances:instanceState=running">EC2</a> trong vùng <strong>N. California (us-west-1)</strong>.</p>
+</li>
+<li>
+<p>Chọn máy chủ tên <strong>pilot-secondary</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Instance state</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Terminate instance</strong>.
+<img src="./images/5.cleanup/5.14cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Đi đến <a href="https://us-west-1.console.aws.amazon.com/ec2/home?region=us-west-1#Images:visibility=owned-by-me">AMIs</a>.</p>
+</li>
+<li>
+<p>Chọn AMI tên <strong>pilotAMI</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Nhấn <strong>Deregister AMI</strong>.
+<img src="./images/5.cleanup/5.15cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Lặp lại các bước trên để xóa <a href="https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Images:visibility=owned-by-me">AMIs</a> tại vùng <strong>N. Virginia (us-east-1)</strong>.</p>
+</li>
+</ol>
+<h3 id="dọn-dẹp-cloudformation-tại-vùng-thứ-cấp">Dọn dẹp CloudFormation tại vùng thứ cấp</h3>
+<ol>
+<li>
+<p>Đi đến <a href="https://us-west-1.console.aws.amazon.com/cloudformation/home?region=us-west-1#/stacks/outputs?stackId=arn%3Aaws%3Acloudformation%3Aus-west-1%3A170074558790%3Astack%2Fpilot-secondary%2F03e01970-9f12-11ee-bb5d-0282085eba19&amp;filteringText=&amp;filteringStatus=active&amp;viewNested=true">CloudFormation stacks</a> tại vùng <strong>N. California (us-west-1)</strong>.</p>
+</li>
+<li>
+<p>Chọn stack tên <strong>pilot-secondary</strong>.</p>
+</li>
+<li>
+<p>Sau đó nhấn <strong>Delete</strong>.
+<img src="./images/5.cleanup/5.16cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Sau khi stack <strong>pilot-secondary</strong> được xóa, chọn stack tên <strong>network-stack</strong>.</p>
+</li>
+<li>
+<p>Sau đó nhấn <strong>Delete</strong>.
+<img src="./images/5.cleanup/5.17cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+</ol>
+<h3 id="dọn-dẹp-cloudformation-tại-vùng-chính">Dọn dẹp CloudFormation tại vùng chính</h3>
+<ol>
+<li>
+<p>Đi đến <a href="https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringText=&amp;filteringStatus=active&amp;viewNested=true&amp;stackId=arn%3Aaws%3Acloudformation%3Aus-west-1%3A170074558790%3Astack%2Fnetwork-stack%2F97f9d5d0-9f10-11ee-a02a-06401036bc1b">CloudFormation stacks</a> tại vùng <strong>N. Virginia (us-east-1)</strong>.</p>
+</li>
+<li>
+<p>Lặp lại các bước trên để xóa stack <strong>pilot-primary</strong> trước, sau đó xóa stack <strong>network-stack</strong>.</p>
+</li>
+</ol>
+<h4 id="chúc-mừng-bạn-đã-hoàn-thành-bài-thực-thành-này">Chúc mừng, bạn đã hoàn thành bài thực thành này!</h4>
 
 
 
@@ -841,7 +1023,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra dự phòng"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/4.failover/4.3.verifyfailover/" title="Kiểm tra chế độ dự phòng"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/1.introduce/" title="Giới thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -854,19 +1036,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1703218270"></script>
-    <script src="/js/perfect-scrollbar.min.js?1703218270"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1703218270"></script>
-    <script src="/js/jquery.sticky.js?1703218270"></script>
-    <script src="/js/featherlight.min.js?1703218270"></script>
-    <script src="/js/highlight.pack.js?1703218270"></script>
+    <script src="/js/clipboard.min.js?1703255608"></script>
+    <script src="/js/perfect-scrollbar.min.js?1703255608"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1703255608"></script>
+    <script src="/js/jquery.sticky.js?1703255608"></script>
+    <script src="/js/featherlight.min.js?1703255608"></script>
+    <script src="/js/highlight.pack.js?1703255608"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1703218270"></script>
-    <script src="/js/learn.js?1703218270"></script>
-    <script src="/js/hugo-learn.js?1703218270"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1703255608"></script>
+    <script src="/js/learn.js?1703255608"></script>
+    <script src="/js/hugo-learn.js?1703255608"></script>
 
-    <link href="/mermaid/mermaid.css?1703218270" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1703218270"></script>
+    <link href="/mermaid/mermaid.css?1703255608" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1703255608"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
