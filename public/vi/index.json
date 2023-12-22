@@ -1,0 +1,106 @@
+[
+{
+	"uri": "/vi/4.failover/4.1.aurora/",
+	"title": "Aurora",
+	"tags": [],
+	"description": "",
+	"content": "Aurora "
+},
+{
+	"uri": "/vi/1.introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Giới thiệu "
+},
+{
+	"uri": "/vi/",
+	"title": "Pilot Light",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/2.preparation/2.1.s3access/",
+	"title": "Truy cập S3",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập S3 "
+},
+{
+	"uri": "/vi/2.preparation/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Các bước chuẩn bị "
+},
+{
+	"uri": "/vi/4.failover/4.2.ec2/",
+	"title": "EC2",
+	"tags": [],
+	"description": "",
+	"content": "EC2 "
+},
+{
+	"uri": "/vi/2.preparation/2.2.primaryregion/",
+	"title": "Region chính",
+	"tags": [],
+	"description": "",
+	"content": "Region chính "
+},
+{
+	"uri": "/vi/3.preparesecondaryregion/",
+	"title": "Chuẩn bị region phụ",
+	"tags": [],
+	"description": "",
+	"content": "Chuẩn bị region phụ "
+},
+{
+	"uri": "/vi/4.failover/4.3.verifyfailover/",
+	"title": "Kiểm tra dự phòng",
+	"tags": [],
+	"description": "",
+	"content": "Kiểm tra dự phòng "
+},
+{
+	"uri": "/vi/2.preparation/2.3.secondaryregion/",
+	"title": "Region phụ",
+	"tags": [],
+	"description": "",
+	"content": "Region phụ "
+},
+{
+	"uri": "/vi/4.failover/",
+	"title": "Chế độ dự phòng",
+	"tags": [],
+	"description": "",
+	"content": "Chế độ dự phòng "
+},
+{
+	"uri": "/vi/2.preparation/2.4.verifywebsite/",
+	"title": "Kiểm tra website",
+	"tags": [],
+	"description": "",
+	"content": "Kiểm tra website "
+},
+{
+	"uri": "/vi/5.cleanupresources/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Dọn dẹp tài nguyên "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

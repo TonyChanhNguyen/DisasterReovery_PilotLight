@@ -1,0 +1,106 @@
+[
+{
+	"uri": "/4.failover/4.1.aurora/",
+	"title": "Aurora",
+	"tags": [],
+	"description": "",
+	"content": "Amazon Aurora Global Database is designed for globally distributed applications, allowing a single Amazon Aurora database to span multiple AWS regions. It replicates your data with no impact on database performance, enables fast local reads with low latency in each region, and provides disaster recovery from region-wide outages. In disaster recovery situations, you can promote a secondary region to take full read-write responsibilities in under a minute.\nWith an Aurora global database, there are two different approaches to failover depending on the scenario.\nFailover – Use this approach to recover from an unplanned outage. With this approach, you perform a cross-Region failover to one of the secondary DB clusters in your Aurora global database. The RPO for this approach is typically a non-zero value measured in seconds. The amount of data loss depends on the Aurora global database replication lag across the AWS Regions at the time of the failure.\nSwitchover – This operation was previously called \u0026ldquo;managed planned failover.\u0026rdquo; Use this approach for controlled scenarios, such as operational maintenance and other planned operational procedures. Because this feature synchronizes secondary DB clusters with the primary before making any other changes, RPO is 0 (no data loss).\nSwitchover, is showcased in Warm Standby workshop.\nFor this workshop we will be doing a Failover.\n Go to RDS in N. California (us-west-1) region. Look at the pilot-global Global database. Notice how you have pilot-primary a Primary cluster in us-east-1 which has your Writer instance and pilot-secondary a Secondary cluster in us-west-1 which has your Reader instance.   "
+},
+{
+	"uri": "/1.introduce/",
+	"title": "Introduce",
+	"tags": [],
+	"description": "",
+	"content": "Overview In this module, you will go through the Pilot Light disaster recovery strategy. Pilot Light disaster recovery strategy has Recovery Point Objective(RPO) / Recovery Time Objective (RTO) within tens of minutes. For the pilot light strategy secondary region, the data is live and core infrastructure is provisioned, but the services are either idle or absent.\nYour application is currently deployed in the primary region N. Virginia (us-east-1). N. California (us-west-1) will be your secondary.\nYour test application is Unishop. It is a Spring Boot Java application deployed on a single Amazon Elastic Compute Cloud (EC2) instance using a public subnet. Your datastore is an Amazon Aurora MySQL database with a frontend written using bootstrap and hosted in Amazon Simple Storage Service (S3).\nThis module takes advantage of Amazon Machine Images (AMI) which you will use to launch your Amazon EC2 instance and Amazon Aurora Global Database to replicate your Amazon Aurora MySQL data to your secondary region.\nCloudFormation will be used to configure the infrastructure and deploy the application. Provisioning your infrastructure with infrastructure as code (IaC) methodologies is a best practice. CloudFormation is an easy way to speed up cloud provisioning with infrastructure as code.\nBecause this workload has only one EC2 instance that is deployed in only one Availability Zone, this architecture does not meet the AWS Well Architected Framework best practices for running highly available production applications but suffices for this workshop.\n\rContent  Introduce Preparation  2.1 S3 access 2.2 Primary region 2.3 Secondary region 2.4 Verify website   Prepare secondary region Failover  4.1 Aurora 4.2 EC2 4.3 Verify failover   Cleanup resources  "
+},
+{
+	"uri": "/",
+	"title": "Pilot Light",
+	"tags": [],
+	"description": "",
+	"content": "Pilot Light In this module, you will go through the Pilot Light disaster recovery strategy. Pilot Light disaster recovery strategy has Recovery Point Objective(RPO) / Recovery Time Objective (RTO) within tens of minutes. For the pilot light strategy secondary region, the data is live and core infrastructure is provisioned, but the services are either idle or absent.\nYour application is currently deployed in the primary region N. Virginia (us-east-1). N. California (us-west-1) will be your secondary.\nYour test application is Unishop. It is a Spring Boot Java application deployed on a single Amazon Elastic Compute Cloud (EC2) instance using a public subnet. Your datastore is an Amazon Aurora MySQL database with a frontend written using bootstrap and hosted in Amazon Simple Storage Service (S3).\nThis module takes advantage of Amazon Machine Images (AMI) which you will use to launch your Amazon EC2 instance and Amazon Aurora Global Database to replicate your Amazon Aurora MySQL data to your secondary region.\nCloudFormation will be used to configure the infrastructure and deploy the application. Provisioning your infrastructure with infrastructure as code (IaC) methodologies is a best practice. CloudFormation is an easy way to speed up cloud provisioning with infrastructure as code.\nBecause this workload has only one EC2 instance that is deployed in only one Availability Zone, this architecture does not meet the AWS Well Architected Framework best practices for running highly available production applications but suffices for this workshop.\n\r"
+},
+{
+	"uri": "/2.preparation/2.1.s3access/",
+	"title": "S3 access ",
+	"tags": [],
+	"description": "",
+	"content": "Your application employs AWS Simple Storage Service (S3) Static website hosting. To make the application available to Internet users, you must disable the AWS account policy that blocks public access.\n Click S3 to navigate to the dashboard. Select feature Block Public Access settings for this account.  If you see that Block public access is On, click on Edit button.  If you see that Block public access is Off, you can skip this step and to go Primary region.\n\r Uncheck Block all public access.\n  Then, click on save changes.   Input confirm, then click on Confirm to save your changes.   Your changes had been updated successfully.   "
+},
+{
+	"uri": "/4.failover/4.2.ec2/",
+	"title": "EC2",
+	"tags": [],
+	"description": "",
+	"content": "EC2 "
+},
+{
+	"uri": "/2.preparation/",
+	"title": "Preparation ",
+	"tags": [],
+	"description": "",
+	"content": "Content  S3 access Primary region Secondary region Verify website  "
+},
+{
+	"uri": "/2.preparation/2.2.primaryregion/",
+	"title": "Primary region",
+	"tags": [],
+	"description": "",
+	"content": "Deploy Network Configuration using Amazon CloudFormation Templates   Create Network Infrastructure in primary region N. Virginia (us-east-1) by launching this CloudFormation Template.\n  At CloudFormation interface, click on Next.   At Specify stack details interface, input stack name network-stack.\n  Then, click on Next.   At Configure stack options interface. Scroll down and click on Next.   At Review network-stack interface. Scroll down and click on Submit.   Your network stack is creating.   After a minute, your stack will be created successfully.   Deploy Application  Create application in primary region N. Virginia (us-east-1) by launching CloudFormation Template. At CloudFormation interface, click on Next.   At Specify stack details interface:\n Keep IsPrimary as default (Yes) Keep LatestAmiId as default Keep NetworkStackName as default (network-stack)    Then, click on Next.\n   At Configure stack options interface. Scroll down and click on Next.   At Review pilot-primary interface, scroll down to the end of page.\n  Check at box I acknowledge that AWS CloudFormation might create IAM resources with custom names.\n  Then, click on Submit.   Your application stack is creating. It will take you about 15 minutes to finish.   After about 15 minutes, your stack had been created successfully.   "
+},
+{
+	"uri": "/3.preparesecondaryregion/",
+	"title": "Prepare secondary region",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will perform create the EC2 AMI at Primary region, then copy it in to Secondary region to launch EC2 instance on it.\nCreate the EC2 Amazon Machine Image (AMI)   Go to EC2 at Primary region N. Virginia (us-east-1).\n  Select the instance name pilot-primary.\n  Click on Action.\n  Click on Images and Templates under Action.\n  Then, click on Create image.   Enter pilotAMI as the Image name.\n  Then, click on Create image.   Copy the EC2 Amazon Machine Image (AMI)   Click AMIs to navigate to the dashboard.\n  Select image name pilotAMI.\n  Click on Action.\n  Click on Copy AMI under Action.   At Copy AMI interface, select Secondary region US West (N. California) as Destination Region.\n  Then, click on Copy AMI.   Go to AMIs at Secondary region N. California (us-west-1), you will see there is a AMI with status is Pending.   It will take you about 5 minutes for the AMI was copied successfully.   "
+},
+{
+	"uri": "/2.preparation/2.3.secondaryregion/",
+	"title": "Secondary region",
+	"tags": [],
+	"description": "",
+	"content": "Deploy Network Configuration using Amazon CloudFormation Templates   Create Network Infrastructure in secondary region N. California (us-west-1) by launching this CloudFormation Template.\n  At CloudFormation interface, click on Next.   At Specify stack details interface, input stack name network-stack.\n  Then, click on Next.   At Configure stack options interface. Scroll down and click on Next.   At Review network-stack interface. Scroll down and click on Submit.   Your network stack is creating.   After a minute, your stack will be created successfully.   Deploy Application 1 Create the application in the secondary region N. California (us-west-1) by launching CloudFormation Template. 2. At CloudFormation interface, click on Next.  At Specify stack details interface:\n Set IsPrimary as No Keep LatestAmiId as default Keep NetworkStackName as default (network-stack)    Then, click on Next.   At Configure stack options interface. Scroll down and click on Next.   At Review pilot-primary interface, scroll down to the end of page.\n  Check at box I acknowledge that AWS CloudFormation might create IAM resources with custom names.\n  Then, click on Submit.   Your application stack is creating. It will take you about 15 minutes to finish.   After about 15 minutes, your stack had been created successfully.   "
+},
+{
+	"uri": "/4.failover/4.3.verifyfailover/",
+	"title": "Verify failover",
+	"tags": [],
+	"description": "",
+	"content": "Verify failover "
+},
+{
+	"uri": "/4.failover/",
+	"title": "Failover",
+	"tags": [],
+	"description": "",
+	"content": "In the event a disaster affects your primary region N. Virginia (us-east-1), you want to bring up the resources in the secondary region Oregon (us-west-2).\nSimulating a Regional Service Event You will now simulate a regional service event affecting the Unishop website in N. Virginia (us-east-1). You are going to achieve this by blocking public access to the S3 bucket that is hosting the website making the Unishop website unavailable.\n  Go to S3.\n  Click on the bucket name pilot-primary-uibucket-xxxxxxxxxxxx.   Click on Permissions tab.   In the Block public access (bucket settings) section, click on Edit.   Enable the Block all public access checkbox.\n  Then click the Save changes button.   Input confirm.\n  Click on Confirm to save your changes.   Click on Properties tab.   Scroll down to the Static website hosting section. Click on the Bucket website endpoint link.   You should get a 403 Forbidden error.   "
+},
+{
+	"uri": "/2.preparation/2.4.verifywebsite/",
+	"title": "Verify website",
+	"tags": [],
+	"description": "",
+	"content": "Primary Region   Click CloudFormation Stacks to navigate to the dashboard in N. Virginia (us-east-1) region.\n  Choose the pilot-primary stack.\n  Click the Output link.   Click on the WebsiteURL output link and open in a new browser tab or window.   At web page, click on Sign up to register account.   Fill needed information to sign up account.\n  Then, click on Signup to finish this step.\n  \rKeep remember information which you provided for this step.\n\r Click on Log in.   Fill information which you provided.\n  Then, click on Login.   After log in successfully, click to Unicorn you want. Then click on Add to cart to add it into your cart.   After you add Unicorn item to cart successfully, check Cart icon to see the quantity was increased.   Repeat step 12 to add more items to your cart.   After finish those step. Save the quantity of your cart and its region. We will verify them again after performing replicate website into secondary region.\n  \rIn my situation, the quantity of cart is 5 and region is us-east-1 (Primary region).\n\rSecondary Region Your secondary region should be unavailable. In a pilot light disaster recovery strategy there are no compute instances.\n  Go to CloudFormation Stacks in region N. California (us-west-1).\n  Choose the pilot-secondary stack.\n  Click the Outputs link.   Click on the WebsiteURL output link and open in a new browser tab or window.   You should see a 404 error page.   "
+},
+{
+	"uri": "/5.cleanupresources/",
+	"title": "Cleanup resources",
+	"tags": [],
+	"description": "",
+	"content": "Cleanup resources "
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
