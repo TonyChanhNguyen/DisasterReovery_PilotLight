@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Verify failover :: AWS System Manager</title>
+    <title>Verify failover :: Pilot Light</title>
 
     
-    <link href="/css/nucleus.css?1703081089" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1703081089" rel="stylesheet">
-    <link href="/css/hybrid.css?1703081089" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1703081089" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1703081089" rel="stylesheet">
-    <link href="/css/auto-complete.css?1703081089" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1703081089" rel="stylesheet">
-    <link href="/css/theme.css?1703081089" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1703081089" rel="stylesheet">
+    <link href="/css/nucleus.css?1703214404" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1703214404" rel="stylesheet">
+    <link href="/css/hybrid.css?1703214404" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1703214404" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1703214404" rel="stylesheet">
+    <link href="/css/auto-complete.css?1703214404" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1703214404" rel="stylesheet">
+    <link href="/css/theme.css?1703214404" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1703214404" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1703081089" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1703214404" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1703081089"></script>
+    <script src="/js/jquery-3.3.1.min.js?1703214404"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1703081089"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1703081089"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1703214404"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1703214404"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1703081089"></script>
+<script type="text/javascript" src="/js/search.js?1703214404"></script>
 
     
   </div>
@@ -578,7 +578,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -602,7 +610,33 @@
 
 
 
-	<h1 id="verify-failover">Verify failover</h1>
+	<ol>
+<li>Go to <a href="https://us-west-1.console.aws.amazon.com/cloudformation/home?region=us-west-1#/stacks/?filteringText=&amp;filteringStatus=active&amp;viewNested=true">CloudFormation Stacks</a> in the <strong>N. California (us-west-1)</strong> region.</li>
+<li>Click on stack name <strong>pilot-secondary</strong>.</li>
+</ol>
+<p><img src="/images/4.failover/4.3.verifyfailover/4.3.1verifyfailover.png?width=90pc" alt="Verify Failover"></p>
+<ol start="3">
+<li>
+<p>Click on <strong>Outputs</strong> tab.
+<img src="/images/4.failover/4.3.verifyfailover/4.3.2verifyfailover.png?width=90pc" alt="Verify Failover"></p>
+</li>
+<li>
+<p>Click on <strong>WebsiteURL</strong> link.
+<img src="/images/4.failover/4.3.verifyfailover/4.3.3verifyfailover.png?width=90pc" alt="Verify Failover"></p>
+</li>
+<li>
+<p>Your website should be appeared like this.
+<img src="/images/4.failover/4.3.verifyfailover/4.3.4verifyfailover.png?width=90pc" alt="Verify Failover"></p>
+</li>
+<li>
+<p>Now we will login to website to see the result. The needed information to login created at <a href="../../2.preparation/2.4.verifywebsite/">2.4 Verify website</a>.</p>
+</li>
+<li>
+<p>After login successfully, you can see at the cart still saved the quantity of Primary Region. And the region now is <strong>us-west-1</strong>.</p>
+</li>
+</ol>
+<p><img src="/images/4.failover/4.3.verifyfailover/4.3.5verifyfailover.png?width=90pc" alt="Verify Failover"></p>
+<h4 id="congratulations-your-website-had-been-done-failover-to-secondary-region-n-california-us-west-1-from-primary-region-n-virginia-us-east-1-successfully">Congratulations, your website had been done failover to Secondary Region <strong>N. California (us-west-1)</strong> from Primary Region <strong>N. Virginia (us-east-1)</strong> successfully.</h4>
 
 
 
@@ -867,19 +901,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1703081089"></script>
-    <script src="/js/perfect-scrollbar.min.js?1703081089"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1703081089"></script>
-    <script src="/js/jquery.sticky.js?1703081089"></script>
-    <script src="/js/featherlight.min.js?1703081089"></script>
-    <script src="/js/highlight.pack.js?1703081089"></script>
+    <script src="/js/clipboard.min.js?1703214404"></script>
+    <script src="/js/perfect-scrollbar.min.js?1703214404"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1703214404"></script>
+    <script src="/js/jquery.sticky.js?1703214404"></script>
+    <script src="/js/featherlight.min.js?1703214404"></script>
+    <script src="/js/highlight.pack.js?1703214404"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1703081089"></script>
-    <script src="/js/learn.js?1703081089"></script>
-    <script src="/js/hugo-learn.js?1703081089"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1703214404"></script>
+    <script src="/js/learn.js?1703214404"></script>
+    <script src="/js/hugo-learn.js?1703214404"></script>
 
-    <link href="/mermaid/mermaid.css?1703081089" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1703081089"></script>
+    <link href="/mermaid/mermaid.css?1703214404" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1703214404"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

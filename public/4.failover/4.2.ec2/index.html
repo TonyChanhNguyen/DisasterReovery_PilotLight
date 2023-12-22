@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>EC2 :: AWS System Manager</title>
+    <title>EC2 :: Pilot Light</title>
 
     
-    <link href="/css/nucleus.css?1703081089" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1703081089" rel="stylesheet">
-    <link href="/css/hybrid.css?1703081089" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1703081089" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1703081089" rel="stylesheet">
-    <link href="/css/auto-complete.css?1703081089" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1703081089" rel="stylesheet">
-    <link href="/css/theme.css?1703081089" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1703081089" rel="stylesheet">
+    <link href="/css/nucleus.css?1703214404" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1703214404" rel="stylesheet">
+    <link href="/css/hybrid.css?1703214404" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1703214404" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1703214404" rel="stylesheet">
+    <link href="/css/auto-complete.css?1703214404" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1703214404" rel="stylesheet">
+    <link href="/css/theme.css?1703214404" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1703214404" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1703081089" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1703214404" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1703081089"></script>
+    <script src="/js/jquery-3.3.1.min.js?1703214404"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1703081089"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1703081089"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1703214404"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1703214404"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1703081089"></script>
+<script type="text/javascript" src="/js/search.js?1703214404"></script>
 
     
   </div>
@@ -602,7 +602,63 @@
 
 
 
-	<h1 id="ec2">EC2</h1>
+	<ol>
+<li>
+<p>Go to <a href="https://us-west-1.console.aws.amazon.com/ec2/home?region=us-west-1#Images:visibility=owned-by-me">AMIs</a> in the <strong>N. California (us-west-1)</strong> region.</p>
+</li>
+<li>
+<p>Select AMI name <strong>pilotAMI</strong>.</p>
+</li>
+<li>
+<p>Then, click on <strong>Launch instance from AMI</strong>.
+<img src="/images/4.failover/4.2.ec2/4.2.1ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Enter <code>pilot-secondary</code> as <strong>Name</strong>.
+<img src="/images/4.failover/4.2.ec2/4.2.2ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Scroll down and at <strong>Key pair (login)</strong> feature, select <strong>Proceed without a key pair (Not recommended)</strong> as <strong>Key pair name - required</strong>.
+<img src="/images/4.failover/4.2.ec2/4.2.3ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>At <strong>Network settings</strong> feature, click on <strong>Edit</strong>.
+<img src="/images/4.failover/4.2.ec2/4.2.4ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Select the <strong>VPC</strong> that is NOT the default VPC as the <strong>VPC</strong>.</p>
+</li>
+<li>
+<p>At <strong>Firewall (security groups)</strong>, select <strong>Select existing security group</strong>.</p>
+</li>
+<li>
+<p>Then select SG name <strong>network-stack-WebServerSecurityGroup-XXXXXXXXXXXXX</strong>.
+<img src="/images/4.failover/4.2.ec2/4.2.5ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>Scroll down and expand <strong>Advanced details</strong>.</p>
+</li>
+<li>
+<p>At <strong>IAM instance profile</strong>, select <strong>pilot-secondary-S3InstanceProfile-xxx</strong>.
+<img src="/images/4.failover/4.2.ec2/4.2.7ec2.png?width=90pc" alt="Failover EC2"></p>
+</li>
+<li>
+<p>At <strong>User data - optional</strong> feature, input the code below:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>#!/bin/bash     
+sudo su ec2-user                        
+export AWS_DEFAULT_REGION=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | python -c &#34;import json,sys; print json.loads(sys.stdin.read())[&#39;region&#39;]&#34;)
+export DATABASE=$(aws rds describe-db-clusters --region $AWS_DEFAULT_REGION --db-cluster-identifier pilot-secondary --query &#39;DBClusters[*].[Endpoint]&#39; --output text)
+sudo bash -c &#34;cat &gt;/home/ec2-user/unishopcfg.sh&#34; &lt;&lt;EOF
+#!/bin/bash
+export DB_ENDPOINT=$DATABASE
+EOF
+sudo systemctl restart unishop
+</code></pre><ol start="13">
+<li>Click on <strong>Launch instance</strong>.</li>
+</ol>
+<p><img src="/images/4.failover/4.2.ec2/4.2.6ec2.png?width=90pc" alt="Failover EC2"></p>
 
 
 
@@ -867,19 +923,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1703081089"></script>
-    <script src="/js/perfect-scrollbar.min.js?1703081089"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1703081089"></script>
-    <script src="/js/jquery.sticky.js?1703081089"></script>
-    <script src="/js/featherlight.min.js?1703081089"></script>
-    <script src="/js/highlight.pack.js?1703081089"></script>
+    <script src="/js/clipboard.min.js?1703214404"></script>
+    <script src="/js/perfect-scrollbar.min.js?1703214404"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1703214404"></script>
+    <script src="/js/jquery.sticky.js?1703214404"></script>
+    <script src="/js/featherlight.min.js?1703214404"></script>
+    <script src="/js/highlight.pack.js?1703214404"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1703081089"></script>
-    <script src="/js/learn.js?1703081089"></script>
-    <script src="/js/hugo-learn.js?1703081089"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1703214404"></script>
+    <script src="/js/learn.js?1703214404"></script>
+    <script src="/js/hugo-learn.js?1703214404"></script>
 
-    <link href="/mermaid/mermaid.css?1703081089" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1703081089"></script>
+    <link href="/mermaid/mermaid.css?1703214404" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1703214404"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

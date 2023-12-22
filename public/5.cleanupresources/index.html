@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Cleanup resources :: AWS System Manager</title>
+    <title>Cleanup resources :: Pilot Light</title>
 
     
-    <link href="/css/nucleus.css?1703081089" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1703081089" rel="stylesheet">
-    <link href="/css/hybrid.css?1703081089" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1703081089" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1703081089" rel="stylesheet">
-    <link href="/css/auto-complete.css?1703081089" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1703081089" rel="stylesheet">
-    <link href="/css/theme.css?1703081089" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1703081089" rel="stylesheet">
+    <link href="/css/nucleus.css?1703214404" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1703214404" rel="stylesheet">
+    <link href="/css/hybrid.css?1703214404" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1703214404" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1703214404" rel="stylesheet">
+    <link href="/css/auto-complete.css?1703214404" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1703214404" rel="stylesheet">
+    <link href="/css/theme.css?1703214404" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1703214404" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1703081089" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1703214404" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1703081089"></script>
+    <script src="/js/jquery-3.3.1.min.js?1703214404"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1703081089"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1703081089"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1703214404"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1703214404"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1703081089"></script>
+<script type="text/javascript" src="/js/search.js?1703214404"></script>
 
     
   </div>
@@ -572,7 +572,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#s3-cleanup">S3 Cleanup</a></li>
+        <li><a href="#database-cleanup">Database Cleanup</a></li>
+        <li><a href="#ec2-cleanup">EC2 cleanup</a></li>
+        <li><a href="#cloudformation-secondary-region-cleanup">CloudFormation Secondary Region Cleanup</a></li>
+        <li><a href="#cloudformation-primary-region-cleanup">CloudFormation Primary Region Cleanup</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -596,7 +608,177 @@
 
 
 
-	<h1 id="cleanup-resources">Cleanup resources</h1>
+	<h3 id="s3-cleanup">S3 Cleanup</h3>
+<ol>
+<li>
+<p>Go to <a href="https://s3.console.aws.amazon.com/s3/home">S3</a>.</p>
+</li>
+<li>
+<p>Select the <strong>pilot-primary-uibucket-xxxx</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Empty</strong>.
+<img src="/images/5.cleanup/5.1cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Input <code>permanently delete</code>.</p>
+</li>
+<li>
+<p>Then, click on <strong>Empty</strong>.
+<img src="/images/5.cleanup/5.2cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Repeat those step for bucket name <strong>pilot-secondary-uibucket-xxxx</strong> also.</p>
+</li>
+</ol>
+<h3 id="database-cleanup">Database Cleanup</h3>
+<h4 id="primary-region">Primary region</h4>
+<ol>
+<li>
+<p>Go to <a href="https://us-west-1.console.aws.amazon.com/rds/home?region=us-east-1#databases:">RDS</a> in <strong>N. Virginia (us-east-1)</strong> region.</p>
+</li>
+<li>
+<p>Select <strong>unishop</strong> database under <strong>pilot-primary</strong> cluster.</p>
+</li>
+<li>
+<p>Click on <strong>Action</strong>.</p>
+</li>
+<li>
+<p>Then click on <strong>Delete</strong>.
+<img src="/images/5.cleanup/5.5cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Enter <code>delete me</code>.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.
+<img src="/images/5.cleanup/5.6cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>After <strong>unishop</strong> database was deleted, select <strong>pilot-primary</strong> cluster.</p>
+</li>
+<li>
+<p>Click on <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Remove from global database</strong>.
+<img src="/images/5.cleanup/5.9cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Click <strong>Remove and promote</strong>.
+<img src="/images/5.cleanup/5.10cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>After remove from global database, select <strong>pilot-primary</strong> cluster.</p>
+</li>
+<li>
+<p>Click on <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.
+<img src="/images/5.cleanup/5.11cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Uncheck <strong>Create final snapshot</strong> box.</p>
+</li>
+<li>
+<p>Check <strong>I acknowledge that upon instance&hellip;</strong> box.</p>
+</li>
+<li>
+<p>Input <code>delete me</code>.</p>
+</li>
+<li>
+<p>Then, click on <strong>Delete DB sluster</strong>.
+<img src="/images/5.cleanup/5.8cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+</ol>
+<h4 id="secondary-region">Secondary region</h4>
+<ol>
+<li>Go to <a href="https://us-west-1.console.aws.amazon.com/rds/home?region=us-west-1#databases:">RDS</a> in <strong>N. California (us-west-1)</strong> region.</li>
+<li>Repeat all above steps to delete <strong>unishop-pilot</strong> database first, then delete <strong>pilot-secondary</strong> cluster.</li>
+</ol>
+<p>After databases and clusters were deleted, now we will delete <strong>Global database</strong>.</p>
+<ol start="3">
+<li>
+<p>Select <strong>pilot-global</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.
+<img src="/images/5.cleanup/5.12cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Input <code>delete me</code>.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.
+<img src="/images/5.cleanup/5.13cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+</ol>
+<h3 id="ec2-cleanup">EC2 cleanup</h3>
+<ol>
+<li>
+<p>Go to <a href="https://us-west-1.console.aws.amazon.com/ec2/home?region=us-west-1#Instances:instanceState=running">EC2</a> in the <strong>N. California (us-west-1)</strong> region.</p>
+</li>
+<li>
+<p>Select instance name <strong>pilot-secondary</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Instance state</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Terminate instance</strong>.
+<img src="/images/5.cleanup/5.14cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Go to <a href="https://us-west-1.console.aws.amazon.com/ec2/home?region=us-west-1#Images:visibility=owned-by-me">AMIs</a>.</p>
+</li>
+<li>
+<p>Select AMI name <strong>pilotAMI</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Actions</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Deregister AMI</strong>.
+<img src="/images/5.cleanup/5.15cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>Repeat these steps to delete <a href="https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Images:visibility=owned-by-me">AMIs</a> at the <strong>N. Virginia (us-east-1)</strong> region</p>
+</li>
+</ol>
+<h3 id="cloudformation-secondary-region-cleanup">CloudFormation Secondary Region Cleanup</h3>
+<ol>
+<li>
+<p>Go to <a href="https://us-west-1.console.aws.amazon.com/cloudformation/home?region=us-west-1#/stacks/outputs?stackId=arn%3Aaws%3Acloudformation%3Aus-west-1%3A170074558790%3Astack%2Fpilot-secondary%2F03e01970-9f12-11ee-bb5d-0282085eba19&amp;filteringText=&amp;filteringStatus=active&amp;viewNested=true">CloudFormation stacks</a> in the <strong>N. California (us-west-1)</strong> region.</p>
+</li>
+<li>
+<p>Select stack name <strong>pilot-secondary</strong>.</p>
+</li>
+<li>
+<p>Then click on <strong>Delete</strong>.
+<img src="/images/5.cleanup/5.16cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+<li>
+<p>After stack <strong>pilot-secondary</strong> was deleted, select stack name <strong>network-stack</strong>.</p>
+</li>
+<li>
+<p>Then click on <strong>Delete</strong>.
+<img src="/images/5.cleanup/5.17cleanup.png?width=90pc" alt="Cleanup Resources"></p>
+</li>
+</ol>
+<h3 id="cloudformation-primary-region-cleanup">CloudFormation Primary Region Cleanup</h3>
+<ol>
+<li>
+<p>Go to <a href="https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringText=&amp;filteringStatus=active&amp;viewNested=true&amp;stackId=arn%3Aaws%3Acloudformation%3Aus-west-1%3A170074558790%3Astack%2Fnetwork-stack%2F97f9d5d0-9f10-11ee-a02a-06401036bc1b">CloudFormation stacks</a> in the <strong>N. Virginia (us-east-1)</strong> region.</p>
+</li>
+<li>
+<p>Repeat these steps to delete stack name <strong>pilot-primary</strong> first, then delete stack name <strong>network-stack</strong>.</p>
+</li>
+</ol>
+<h4 id="congratulations-you-had-finished-this-workshop">Congratulations, you had finished this workshop!</h4>
 
 
 
@@ -854,19 +1036,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1703081089"></script>
-    <script src="/js/perfect-scrollbar.min.js?1703081089"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1703081089"></script>
-    <script src="/js/jquery.sticky.js?1703081089"></script>
-    <script src="/js/featherlight.min.js?1703081089"></script>
-    <script src="/js/highlight.pack.js?1703081089"></script>
+    <script src="/js/clipboard.min.js?1703214404"></script>
+    <script src="/js/perfect-scrollbar.min.js?1703214404"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1703214404"></script>
+    <script src="/js/jquery.sticky.js?1703214404"></script>
+    <script src="/js/featherlight.min.js?1703214404"></script>
+    <script src="/js/highlight.pack.js?1703214404"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1703081089"></script>
-    <script src="/js/learn.js?1703081089"></script>
-    <script src="/js/hugo-learn.js?1703081089"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1703214404"></script>
+    <script src="/js/learn.js?1703214404"></script>
+    <script src="/js/hugo-learn.js?1703214404"></script>
 
-    <link href="/mermaid/mermaid.css?1703081089" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1703081089"></script>
+    <link href="/mermaid/mermaid.css?1703214404" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1703214404"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
