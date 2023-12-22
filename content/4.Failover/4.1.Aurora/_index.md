@@ -20,22 +20,22 @@ For this workshop we will be doing a **Failover**.
 
 1. Go to [RDS](https://us-west-1.console.aws.amazon.com/rds/home?region=us-west-1#databases:) in **N. California (us-west-1)** region.
 2. Look at the **pilot-global** Global database. Notice how you have **pilot-primary** a Primary cluster in **us-east-1** which has your **Writer instance** and **pilot-secondary** a Secondary cluster in **us-west-1** which has your **Reader instance**.
-![Failover Aurora](/images/4.failover/4.1.aurora/4.1.1aurora.png?width=90pc)
+![Failover Aurora](./images/4.failover/4.1.aurora/4.1.1aurora.png?width=90pc)
 
 
 3. Select **pilot-global** cluster.
 4. Click on **Actions**.
 5. Choose **Switch over or fail over global database** under **Actions**.
-![Failover Aurora](/images/4.failover/4.1.aurora/4.1.2aurora.png?width=90pc)
+![Failover Aurora](./images/4.failover/4.1.aurora/4.1.2aurora.png?width=90pc)
 
 6. Choose **Failover (allow data loss)**.
 7. At **New primary cluster** feature, select **pilot-secondary**.
 8. Input ```confirm```.
 9. Then, click on **Confirm**.
-![Failover Aurora](/images/4.failover/4.1.aurora/4.1.3aurora.png?width=90pc)
+![Failover Aurora](./images/4.failover/4.1.aurora/4.1.3aurora.png?width=90pc)
 
 10. It will take you several minutes to promote Secondary database to Primary.
-![Failover Aurora](/images/4.failover/4.1.aurora/4.1.4aurora.png?width=90pc)
+![Failover Aurora](./images/4.failover/4.1.aurora/4.1.4aurora.png?width=90pc)
 
 11. When the failover is complete, notice the changes. The **Primary cluster** is now in **us-west-1** which has our **Writer instance** and the **Secondary Cluster** is now in **us-east-1** which has our **Reader instance**. 
-![Failover Aurora](/images/4.failover/4.1.aurora/4.1.5aurora.png?width=90pc)
+![Failover Aurora](./images/4.failover/4.1.aurora/4.1.5aurora.png?width=90pc)
