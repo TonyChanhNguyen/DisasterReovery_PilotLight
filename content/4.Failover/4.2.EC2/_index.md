@@ -12,22 +12,22 @@ pre : " <b> 4.2 </b> "
 ![Failover EC2](/images/4.failover/4.2.ec2/4.2.1ec2.png?width=90pc)
 
 4. Enter ```pilot-secondary``` as **Name**.
-![Failover EC2](./images/4.failover/4.2.ec2/4.2.2ec2.png?width=90pc)
+![Failover EC2](/images/4.failover/4.2.ec2/4.2.2ec2.png?width=90pc)
 
 5. Scroll down and at **Key pair (login)** feature, select **Proceed without a key pair (Not recommended)** as **Key pair name - required**.
-![Failover EC2](./images/4.failover/4.2.ec2/4.2.3ec2.png?width=90pc)
+![Failover EC2](/images/4.failover/4.2.ec2/4.2.3ec2.png?width=90pc)
 
 6. At **Network settings** feature, click on **Edit**.
-![Failover EC2](./images/4.failover/4.2.ec2/4.2.4ec2.png?width=90pc)
+![Failover EC2](/images/4.failover/4.2.ec2/4.2.4ec2.png?width=90pc)
 
 7. Select the **VPC** that is NOT the default VPC as the **VPC**.
 8. At **Firewall (security groups)**, select **Select existing security group**.
 9. Then select SG name **network-stack-WebServerSecurityGroup-XXXXXXXXXXXXX**.
-![Failover EC2](./images/4.failover/4.2.ec2/4.2.5ec2.png?width=90pc)
+![Failover EC2](/images/4.failover/4.2.ec2/4.2.5ec2.png?width=90pc)
 
 10. Scroll down and expand **Advanced details**.
 11. At **IAM instance profile**, select **pilot-secondary-S3InstanceProfile-xxx**.
-![Failover EC2](./images/4.failover/4.2.ec2/4.2.7ec2.png?width=90pc)
+![Failover EC2](/images/4.failover/4.2.ec2/4.2.7ec2.png?width=90pc)
 12. At **User data - optional** feature, input the code below:
 ```
 #!/bin/bash     
@@ -43,4 +43,4 @@ sudo systemctl restart unishop
 
 13. Click on **Launch instance**. 
 
-![Failover EC2](./images/4.failover/4.2.ec2/4.2.6ec2.png?width=90pc)
+![Failover EC2](/images/4.failover/4.2.ec2/4.2.6ec2.png?width=90pc)

@@ -19,21 +19,21 @@ Với bài thực hành này chúng ta sẽ thực hiện một **Failover**.
 
 1. Đi đến [RDS](https://us-west-1.console.aws.amazon.com/rds/home?region=us-west-1#databases:) trong vùng **N. California (us-west-1)**.
 2. Xem xét CSDL toàn cầu **pilot-global**. Chú ý bạn có **pilot-primary** là cụm chính trong **us-east-1** với **Writer instance** and **pilot-secondary** và cụm thứ cấp trong vùng **us-west-1** với **Reader instance**.
-![Failover Aurora](./images/4.failover/4.1.aurora/4.1.1aurora.png?width=90pc)
+![Failover Aurora](/images/4.failover/4.1.aurora/4.1.1aurora.png?width=90pc)
 
 3. Chọn cụm **pilot-global**.
 4. Nhấn **Actions**.
 5. Chọn **Switch over or fail over global database** dưới **Actions**.
-![Failover Aurora](./images/4.failover/4.1.aurora/4.1.2aurora.png?width=90pc)
+![Failover Aurora](/images/4.failover/4.1.aurora/4.1.2aurora.png?width=90pc)
 
 6. Chọn **Failover (allow data loss)**.
 7. Tại mục **New primary cluster**, chọn **pilot-secondary**.
 8. Nhập ```confirm```.
 9. Sau đó, nhấn **Confirm**.
-![Failover Aurora](./images/4.failover/4.1.aurora/4.1.3aurora.png?width=90pc)
+![Failover Aurora](/images/4.failover/4.1.aurora/4.1.3aurora.png?width=90pc)
 
 10. Sẽ mất khoảng vài phút để nâng cấp CSDL thứ cấp thành CSDL chính.
-![Failover Aurora](./images/4.failover/4.1.aurora/4.1.4aurora.png?width=90pc)
+![Failover Aurora](/images/4.failover/4.1.aurora/4.1.4aurora.png?width=90pc)
 
 11. Sau khi quá trình chuyển đổi dự phòng hoàn tất, chú ý sự thay đổi. Cụm **Primary cluster** hiện giờ trong vùng **us-west-1** với **Writer instance** và cụm **Secondary Cluster** hiện giờ trong vùng **us-east-1** với **Reader instance**. 
-![Failover Aurora](./images/4.failover/4.1.aurora/4.1.5aurora.png?width=90pc)
+![Failover Aurora](/images/4.failover/4.1.aurora/4.1.5aurora.png?width=90pc)
