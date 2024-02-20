@@ -10,7 +10,7 @@ pre : " <b> 2.1 </b> "
 1. Nhấn [S3](https://s3.console.aws.amazon.com/s3/home) để chuyển hướng đến giao diện.
 2. Chọn chức năng **Block Public Access settings for this account**.
 
-![S3 Access](../../images/2.preparation/2.1.s3access/2.1.1s3access.png?width=90pc)
+![S3 Access](../images/2.preparation/2.1.s3access/2.1.1s3access.png?width=90pc)
 
 3. Nếu bạn thấy rằng **Block public access** là **On**, nhấn nút **Edit**.
 
