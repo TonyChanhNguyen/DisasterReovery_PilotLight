@@ -20,7 +20,7 @@ CloudFormation will be used to configure the infrastructure and deploy the appli
 Because this workload has only one EC2 instance that is deployed in only one Availability Zone, this architecture does not meet the AWS Well Architected Framework best practices for running highly available production applications but suffices for this workshop.
 {{%/notice%}}
 
-![Pilot Light](/images/pilotlight.png?width=90pc)
+![Pilot Light](/images/pilotlight.png?width=60pc)
 
 ### Content
 
