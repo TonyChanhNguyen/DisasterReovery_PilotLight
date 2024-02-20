@@ -21,7 +21,7 @@ CloudFormation sẽ được sử dụng để cấu hình cơ sở hạ tầng 
 Bởi vì bài thực hành này chỉ có một máy chủ EC2 được triển khai chỉ trong một vùng sẵn sàng (Availability Zone), kiến trúc này không đáp ứng được của phương pháp tốt nhất Well Architected Framework cho việc chạy các ứng dụng trên môi trường sản phẩm có tính sẵn sàng cao nhưng phù hợp với bài thực hành này.
 {{%/notice%}}
 
-![Pilot Light](images/pilotlight.png?width=60pc)
+![Pilot Light](/public/images/pilotlight.png?width=60pc)
 
 ### Nội dung
 
