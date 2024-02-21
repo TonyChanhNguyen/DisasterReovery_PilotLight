@@ -20,4 +20,4 @@ Because this workload has only one EC2 instance that is deployed in only one Ava
 {{%/notice%}}
 
 
-![PilotLight](/images/ws1.png)
+![PilotLight](./images/ws1.png)
