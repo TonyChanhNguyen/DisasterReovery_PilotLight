@@ -14,7 +14,7 @@ Trong bước này, chúng ta sẽ thực hiện tạo một EC2 AMI tại vùng
 3. Nhấn **Action**.
 4. Nhấn **Images and Templates** ở dưới **Action**.
 5. Sau đó, nhấn **Create image**.
-![Prepare secondary region](/../../images/3.preparesecondaryregion/3.1preparesecondaryregion.png?width=90pc)
+![Prepare secondary region](/../images/3.preparesecondaryregion/3.1preparesecondaryregion.png?width=90pc)
 
 6. Nhập ```pilotAMI``` tại **Image name**.
 7. Sau đó, nhấn **Create image**.
