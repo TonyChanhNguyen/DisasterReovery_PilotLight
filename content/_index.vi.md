@@ -21,4 +21,4 @@ Bởi vì bài thực hành này chỉ có một máy chủ EC2 được triển
 {{%/notice%}}
 
 
-![PilotLight](/images/1-1.png)
+![PilotLight](/images/ws1.png)
